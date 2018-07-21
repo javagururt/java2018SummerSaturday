@@ -9,6 +9,8 @@ public class SmartWalletTest {
         test.addMoneyTest3();
         test.redrawMoneyTest1();
         test.redrawMoneyTest2();
+        test.redrawMoneyTest3();
+        test.redrawMoneyTest4();
     }
 
     public void addMoneyTest1() {
@@ -69,6 +71,32 @@ public class SmartWalletTest {
             System.out.println("TEST redrawMoneyTest2 OK");
         } else {
             System.out.println("TEST redrawMoneyTest2 FAIL");
+        }
+    }
+
+    public void redrawMoneyTest3() {
+        int money = 20;
+        String securityCode = "xyz";
+        SmartWallet smartWallet = new SmartWallet(securityCode);
+        smartWallet.addMoney(securityCode, money);
+        boolean result = smartWallet.redraw("abc", money);
+        if (result == false) {
+            System.out.println("TEST redrawMoneyTest3 OK");
+        } else {
+            System.out.println("TEST redrawMoneyTest3 FAIL");
+        }
+    }
+
+    public void redrawMoneyTest4() {
+        int money = 20;
+        String securityCode = "xyz";
+        SmartWallet smartWallet = new SmartWallet(securityCode);
+        smartWallet.addMoney(securityCode, money);
+        boolean result = smartWallet.redraw(securityCode, -20);
+        if (result == false) {
+            System.out.println("TEST redrawMoneyTest4 OK");
+        } else {
+            System.out.println("TEST redrawMoneyTest4 FAIL");
         }
     }
 

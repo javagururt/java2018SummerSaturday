@@ -13,12 +13,16 @@ public class SmartWallet {
     public boolean redraw(String securityCode, int money) {
         if (isSecurityCodeValid(securityCode)
                 && isMoneyPositive(money)
-                && this.money - money >= 0) {
+                && isEnougMoney(money)) {
             this.money = this.money - money;
             return true;
         } else {
             return false;
         }
+    }
+
+    private boolean isEnougMoney(int money) {
+        return this.money >= money;
     }
 
     public boolean addMoney(String securityCode, int money) {
