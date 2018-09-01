@@ -1,11 +1,11 @@
 package com.javaguru.lesson8;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class FillArrayListToEndTest {
+class FillLinkedListToEndTest {
 
     public static void main(String[] args) {
-        ArrayList<Integer> integers = new ArrayList<>();
+        LinkedList<Integer> integers = new LinkedList<>();
         long start = System.currentTimeMillis();
         fillArrayList(integers);
         long finish = System.currentTimeMillis();
@@ -13,7 +13,7 @@ public class FillArrayListToEndTest {
         System.out.println("Result: " + result + " ms");
     }
 
-    public static void fillArrayList(ArrayList<Integer> integers) {
+    public static void fillArrayList(LinkedList<Integer> integers) {
         for (int i = 0; i < 10_000_000; i++) {
             integers.add(i);
         }
