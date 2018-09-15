@@ -25,6 +25,13 @@ class DreamHouse {
         }
     }
 
+    public void printAllRoomNamesInUpperCase() {
+        rooms.stream()
+                .map(room -> room.getName())
+                .map(name -> name.toUpperCase())
+                .forEach(name -> System.out.println(name));
+    }
+
     public void addRoom(AbstractRoom room) {
         rooms.add(room);
     }
